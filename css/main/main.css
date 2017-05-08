@@ -1,0 +1,348 @@
+@import "http://designmodo.github.io/Flat-UI/dist/css/flat-ui.min.css";
+/*Flat UI Free is a beautiful theme for Bootstrap. We have redesigned many of its components to look flat in every pixel*/
+@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css";
+/*Font Awesome 一套绝佳的图标字体库和CSS框架*/
+@import "https://daneden.github.io/animate.css/animate.min.css";
+/*Animate.css 一款强大的预设css3动画库*/
+
+/*-------------------------------*/
+/*           VARIABLES(变量)           */
+/*-------------------------------*/
+body {
+  position: relative;                    /* 相对于其正常位置定位 */
+  overflow-x: hidden;                    /* 隐藏水平滚动条 */
+}
+body,
+html {
+  height: 100%;
+}
+
+/*Bootstrap框架导航条*/
+.nav .open > a {
+  background-color: transparent;         /* transparent是全透明黑色(black)的速记法，即一个类似rgba(0,0,0,0)这样的值 */
+}
+.nav .open > a:hover {
+  background-color: transparent;
+}
+.nav .open > a:focus {
+  background-color: transparent;
+}
+
+/*-------------------------------*/
+/*           Wrappers            */
+/*-------------------------------*/
+#wrapper {
+  transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;         /* Firefox 4 */
+  -o-transition: all 0.5s ease;           /* Safari 和 Chrome */
+  -webkit-transition: all 0.5s ease;      /* Opera */
+  padding-left: 0;
+}
+#wrapper.toggled {
+  padding-left: 220px;
+}
+#wrapper.toggled #sidebar-wrapper {
+  width: 220px;
+}
+#wrapper.toggled #page-content-wrapper {
+  margin-right: -220px;
+  position: absolute;                      /* 绝对定位 */
+}
+#sidebar-wrapper {
+  transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  background: #1a1a1a;
+  height: 100%;
+  left: 220px;
+  margin-left: -220px;
+  overflow-x: hidden;                      /* 隐藏水平滚动条 */
+  overflow-y: auto;                        /* 自动调节垂直滚动条 */
+  width: 0;
+  z-index: 1000;                           /* 设置元素的堆叠顺序 */
+}
+#sidebar-wrapper::-webkit-scrollbar {
+  display: none;                           /*  规定元素应该生成的框的类型，此元素不会被显示 */
+}
+#page-content-wrapper {
+  padding-top: 70px;
+  width: 100%;
+}
+
+/*-------------------------------*/
+/*     Sidebar nav styles        */
+/*-------------------------------*/
+.sidebar-nav {
+  list-style: none;                          /* 消除li前面的小圆点儿 */
+  margin: 0;
+  padding: 0;
+  position: absolute;                        /* 绝对定位 */
+  top: 0;
+  width: 220px;
+}
+.sidebar-nav li {
+  display: inline-block;                     /* 应用此特性的元素呈现为内联对象，周围元素保持在同一行，但可以设置宽度和高度地块元素的属性 */
+  line-height: 20px;
+  position: relative;                        /*相对于其正常位置定位 */
+  width: 100%;
+}
+.sidebar-nav li:before {
+  background-color: #1c1c1c;
+  content: '';                               /* 插入生成的内容*/
+  height: 100%;
+  left: 0;
+  position: absolute;                        /* 绝对定位 */
+  top: 0;
+  transition: width 0.2s ease-in;
+  -webkit-transition: width 0.2s ease-in;    /* Opera */
+  width: 3px;
+  z-index: -1;                               /* 设置元素的堆叠顺序 */
+}
+.sidebar-nav li:first-child a {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+.sidebar-nav li:nth-child(2):before {
+  background-color: #3eb866;
+}
+.sidebar-nav li:nth-child(3):before {
+  background-color: #33b85d;
+}
+.sidebar-nav li:nth-child(4):before {
+  background-color: #2eb857;
+}
+.sidebar-nav li:nth-child(5):before {
+  background-color: #0db83f;
+}
+.sidebar-nav li:nth-child(6):before {
+  background-color: #10b814;
+}
+.sidebar-nav li:nth-child(7):before {
+  background-color: #37b834;
+}
+.sidebar-nav li:nth-child(8):before {
+  background-color: #63b85b;
+}
+.sidebar-nav li:nth-child(9):before {
+  background-color: #0ab852;
+}
+.sidebar-nav li:nth-child(10):before {
+  background-color: #1eb830;
+}
+.sidebar-nav li:hover:before {
+  transition: width 0.2s ease-in;
+  -webkit-transition: width 0.2s ease-in;      /* Opera */
+  width: 100%;
+}
+.sidebar-nav li a {
+  color: #dddddd;
+  display: block;                              /* 此元素将显示为块级元素，前后会带有换行符 (<a><span>这两个标签——因为这两个标签非块元素)*/
+  padding: 10px 15px 10px 30px;
+  text-decoration: none;
+}
+.sidebar-nav li.open:hover before {
+  transition: width 0.2s ease-in;
+  -webkit-transition: width 0.2s ease-in;      /* Opera */
+  width: 100%;
+}
+.sidebar-nav .dropdown-menu {
+  background-color: #222222;
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  width: 100%;
+}
+.sidebar-nav li a:hover,
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus,
+.sidebar-nav li.open a:hover,
+.sidebar-nav li.open a:active,
+.sidebar-nav li.open a:focus {
+  background-color: transparent;           /* transparent是全透明黑色(black)的速记法，即一个类似rgba(0,0,0,0)这样的值 */
+  color: #ffffff;
+  text-decoration: none;
+}
+.sidebar-nav > .sidebar-brand {
+  font-size: 20px;
+  height: 65px;
+  line-height: 44px;
+}
+
+/*-------------------------------*/
+/*       Hamburger-Cross         */
+/*-------------------------------*/
+.hamburger {
+  background: transparent;                /* transparent是全透明黑色(black)的速记法，即一个类似rgba(0,0,0,0)这样的值 */
+  border: none;
+  display: block;                         /* 此元素将显示为块级元素，前后会带有换行符 (<a><span>这两个标签——因为这两个标签非块元素)*/
+  height: 32px;
+  margin-left: 15px;
+  position: fixed;                        /* 相对于浏览器窗口定位 */
+  top: 20px;
+  width: 32px;
+  z-index: 999;                           /* 设置元素的堆叠顺序 */
+}
+.hamburger:hover {
+  outline: none;                          /*绘制于元素周围的一条线，位于边框边缘的外围，可起到突出元素的作用*/
+}
+.hamburger:focus {
+  outline: none;
+}
+.hamburger:active {
+  outline: none;
+}
+.hamburger.is-closed:before {
+  -webkit-transform: translate3d(0, 0, 0);          /* 在ios下可以让动画更加流畅（这个属性会调用硬件加速模式） */
+  -webkit-transition: all 0.35s ease-in-out;        /* Opera */
+  color: #ffffff;
+  content: '';                                      /* 插入生成的内容*/
+  display: block;
+  font-size: 14px;
+  line-height: 32px;
+  opacity: 0;                                       /*设置元素的不透明级别*/
+  text-align: center;
+  width: 100px;
+}
+.hamburger.is-closed:hover before {
+  -webkit-transform: translate3d(-100px, 0, 0);     /*向x轴位移-100像素*/
+  -webkit-transition: all 0.35s ease-in-out;        /* Opera */
+  display: block;
+  opacity: 1;                                       /*设置元素的不透明级别*/
+}
+.hamburger.is-closed:hover .hamb-top {
+  -webkit-transition: all 0.35s ease-in-out;
+  top: 0;
+}
+.hamburger.is-closed:hover .hamb-bottom {
+  -webkit-transition: all 0.35s ease-in-out;
+  bottom: 0;
+}
+.hamburger.is-closed .hamb-top {
+  -webkit-transition: all 0.35s ease-in-out;
+  background-color: rgba(255, 255, 255, 0.7);
+  top: 5px;
+}
+.hamburger.is-closed .hamb-middle {
+  background-color: rgba(255, 255, 255, 0.7);
+  margin-top: -2px;
+  top: 50%;
+}
+.hamburger.is-closed .hamb-bottom {
+  -webkit-transition: all 0.35s ease-in-out;
+  background-color: rgba(255, 255, 255, 0.7);
+  bottom: 5px;
+}
+.hamburger.is-closed .hamb-top,
+.hamburger.is-closed .hamb-middle,
+.hamburger.is-closed .hamb-bottom,
+.hamburger.is-open .hamb-top,
+.hamburger.is-open .hamb-middle,
+.hamburger.is-open .hamb-bottom {
+  height: 4px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+.hamburger.is-open .hamb-top {
+  -webkit-transform: rotate(45deg);                                               /* 旋转45度 */
+  -webkit-transition: -webkit-transform 0.2s cubic-bezier(0.73, 1, 0.28, 0.08);
+  background-color: #ffffff;
+  margin-top: -2px;
+  top: 50%;
+}
+.hamburger.is-open .hamb-middle {
+  background-color: #ffffff;
+  display: none;
+}
+.hamburger.is-open .hamb-bottom {
+  -webkit-transform: rotate(-45deg);                                              /* 旋转-45度 */
+  -webkit-transition: -webkit-transform 0.2s cubic-bezier(0.73, 1, 0.28, 0.08);
+  background-color: #ffffff;
+  margin-top: -2px;
+  top: 50%;
+}
+.hamburger.is-open:before {
+  -webkit-transform: translate3d(0, 0, 0);
+  -webkit-transition: all 0.35s ease-in-out;
+  color: #ffffff;
+  content: '';
+  display: block;
+  font-size: 14px;
+  line-height: 32px;
+  opacity: 0;
+  text-align: center;
+  width: 100px;
+}
+.hamburger.is-open:hover before {
+  -webkit-transform: translate3d(-100px, 0, 0);
+  -webkit-transition: all 0.35s ease-in-out;
+  display: block;
+  opacity: 1;
+}
+
+/*-------------------------------*/
+/*          Dark Overlay         */
+/*-------------------------------*/
+.overlay {
+  position: fixed;                                    /* 相对于浏览器窗口定位 */
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+/*-------------------------------*/
+/*         Right Side-Bar        */
+/*-------------------------------*/
+.side-bar {
+  width: 66px;
+  position: fixed;
+  bottom: 50%;
+  right: 0px;
+  font-size: 0;
+  line-height: 0;
+  z-index: 100;
+}
+
+/*-------------------------------*/
+/*         Left Side-Tab        */
+/*-------------------------------*/
+.side-tab{
+  width: 6%;
+  position: fixed;
+  top: 10%;
+  left: 0px;
+}
+
+/* SOME DEMO STYLES */
+body,
+html {
+  background-color: #3eb866;
+}
+body h1,
+body h2,
+body h3,
+body h4 {
+  color: rgba(255, 255, 255, 0.9);
+}
+body p,
+body blockquote {
+  color: rgba(255, 255, 255, 0.7);
+}
+body a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: underline;                          /* 定义文本下的一条线 */
+}
+body a:hover {
+  color: #ffffff;
+}
+
